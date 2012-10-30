@@ -4,9 +4,11 @@ from django.conf.urls import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns('', 
     # Examples:
-    # url(r'^$', 'spatula.views.home', name='home'),
+    url(r'^$', 'spatula.views.home', name='home'),
+    url(r'^search/(?P<food>\w+)$', 'spatula.views.search'),
+    url(r'^timeline$', 'spatula.views.timeline')
     # url(r'^spatula/', include('spatula.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
