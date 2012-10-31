@@ -11,4 +11,5 @@ def search(request, food):
 
 
 def timeline(request):
-    return HttpResponse("timeline location")
+    return render_to_response('timeline.html', {},context_instance=RequestContext(request)
+)
