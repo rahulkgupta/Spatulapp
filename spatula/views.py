@@ -16,8 +16,9 @@ def step3(request):
     return render_to_response('step3.html', {},context_instance=RequestContext(request)
 )
 
-def search(request, food):
-    return HttpResponse("Search results " + food)
+def search(request):
+    search = request.GET['query']
+    return HttpResponse("Search results " + search)
 
 
 def timeline(request):

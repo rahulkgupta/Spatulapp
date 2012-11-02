@@ -7,7 +7,7 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('', 
     # Examples:
     url(r'^$', 'spatula.views.home', name='home'),
-    url(r'^search/(?P<food>\w+)$', 'spatula.views.search'),
+    url(r'^search', 'spatula.views.search'),
     url(r'^timeline$', 'spatula.views.timeline'),
     url(r'^step2$', 'spatula.views.step2'),
     url(r'^step3$', 'spatula.views.step3')

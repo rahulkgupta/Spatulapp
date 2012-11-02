@@ -86,10 +86,11 @@
       <div class="modal-body">
         <strong>Search for a recipe. Once you are done, click the timline tab on the topbar to resume cooking.</strong>
         <div>
-          <form class="navbar-search">
-            <input type="text" class="search-query" placeholder="Search">
+          <form name="input" class="navbar-search" action="search" method="get">
+            <input type="text" class="search-query" name="query" placeholder="Search">
+            <button type="submit" class="btn btn-primary" >Search</button>
           </form>
-          <button class="btn btn-primary">Search</button>
+          
         </div>
       </div>
       <div class="modal-footer">
