@@ -13,6 +13,21 @@
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
+
+	  h2{
+		margin-left:4%;
+	  }
+
+	  .fade {
+		   opacity: .75;
+		   transition: opacity .25s ease-in-out;
+		   -moz-transition: opacity .25s ease-in-out;
+		   -webkit-transition: opacity .25s ease-in-out;
+	   }
+
+	  .fade:hover {
+	      opacity: 1;
+	  }
     </style>
     <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -21,15 +36,15 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- Fav and touch icons -->
+    <!-- Fav and touch icons --><!-- 
     <link rel="shortcut icon" href="{{ STATIC_URL }}ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ STATIC_URL }}ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}ico/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}ico/apple-touch-icon-57-precomposed.png"> -->
   </head>
 
-  <body>
+  <body style="background-image:url('{{ STATIC_URL }}img/kitchen.jpg'); background-size: 100% auto; color:#FFF;">
 
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -39,7 +54,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/">Spatula</a>
+          <a href="/" class="brand">Spatula</a>
             <div class="nav-collapse collapse">
             <ul class="nav">
               <li><a href="/timeline">Timeline</a></li>
@@ -57,11 +72,11 @@
       </div>
     </div>
 
-    <div class="container">
+	<div class="container" style="width: 70%;margin:60px auto;">
 
-		<div class="row-fluid" style="width:80%;margin:60px auto;">
+		<div class="row-fluid" style="width:100%;margin:50px auto;">
 			<div class="span12">
-				
+
 				<h2>Let's cook
 					<select class="span1">
 						<option>1</option>
@@ -73,27 +88,27 @@
 					</select>
 				recipes of this genre:
 				</h2>
-			
-				<div class="row-fluid" style="margin-top:60px;">
+
+				<div class="row-fluid" style="margin-top:60px;text-align:center;">
 					<div class="span3">
-						<a href="#"><img src="{{ STATIC_URL }}img/football.png" class="img-polaroid"></a>
+						<a href="#"><img src="{{ STATIC_URL }}img/football.png" class="fade"></a>
 					</div>
 					<div class="span3">
-						<a href="step3"><img src="{{ STATIC_URL }}img/golf.png" class="img-polaroid"></a>
+						<a href="step3"><img src="{{ STATIC_URL }}img/golf.png" class="fade"></a>
 					</div>
 					<div class="span3">
-						<a href="#"><img src="{{ STATIC_URL }}img/soccer.png" class="img-polaroid"></a>
+						<a href="#"><img src="{{ STATIC_URL }}img/soccer.png" class="fade"></a>
 					</div>
 					<div class="span3">
-						<a href="#"><img src="{{ STATIC_URL }}img/pub.png" class="img-polaroid"></a>
+						<a href="#"><img src="{{ STATIC_URL }}img/pub.png" class="fade"></a>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
-	
 
-    </div> <!-- /container -->
+
+	</div> <!-- /container -->
 
     <!-- Le javascript
     ================================================== -->
