@@ -14,10 +14,14 @@
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
 
-	  h2{
+	  h2 {
 		margin-left:3%;
-		text-shadow: black 0.1em 0.1em 0.2em;
+		text-shadow: black 0.1em 0.1em 0.2em;	
 	  }
+	
+		li {
+			text-shadow: none;	
+		}
 	
 	  .fade {
 		   opacity: .75;
@@ -45,9 +49,9 @@
 	    -moz-animation-fill-mode:forwards;
 	    animation-fill-mode:forwards;
 
-	    -webkit-animation-duration:1s;
-	    -moz-animation-duration:1s;
-	    animation-duration:1s;
+	    -webkit-animation-duration:.8s;
+	    -moz-animation-duration:.8s;
+	    animation-duration:.8s;
 	}
 
 		.fade-in.one {
@@ -57,21 +61,21 @@
 		}
 
 		.fade-in.two {
-			-webkit-animation-delay: 0.8s;
-			-moz-animation-delay:0.8s;
-			animation-delay: 0.8s;
+			-webkit-animation-delay: 0.7s;
+			-moz-animation-delay:0.7s;
+			animation-delay: 0.7s;
 		}
 
 		.fade-in.three {
-			-webkit-animation-delay: 1.4s;
-			-moz-animation-delay: 1.4s;
-			animation-delay: 1.4s;
+			-webkit-animation-delay: 1.2s;
+			-moz-animation-delay: 1.2s;
+			animation-delay: 1.2s;
 		}
 		
 		.fade-in.four {
-			-webkit-animation-delay: 2s;
-			-moz-animation-delay: 2s;
-			animation-delay: 2s;
+			-webkit-animation-delay: 1.7s;
+			-moz-animation-delay: 1.7s;
+			animation-delay: 1.7s;
 		}
     </style>
     <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
@@ -123,12 +127,18 @@
 			<div class="span12">
 				
 				<h2>It's
-					<select class="span3">
-						<option>Sunday Morning</option>
-						<option>Sunday Afternoon</option>
-						<option>Sunday Evening</option>
-						<option>Sunday Late Night</option>
-					</select>
+					<div class="btn-group">
+					  <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
+					    Sunday Morning
+					    <span class="caret"></span>
+					  </a>
+					  <ul class="dropdown-menu">
+						<li><a href="#">Sunday Late Morning</a></li>
+					    <li><a href="#">Sunday Afternoon</a></li>
+					    <li><a href="#">Sunday Evening</a></li>
+					    <li><a href="#">Sunday Late Night</a></li>
+					  </ul>
+					</div>
 				Let's cook for:
 				</h2>
 			
