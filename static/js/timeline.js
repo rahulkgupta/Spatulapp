@@ -13,9 +13,13 @@ $(document).ready(function() {
         $("#times").append("<div>" + times[i] + " " + instructions[i] + "</div>")
     }
     i = 0
-    setInterval(function () {
+    var interval = setInterval(function () {
         width = $("#progress").width()
         $("#progress").css({width: (width + increment)/totalWidth*100 + "%"})
+        if ((width + increment)/totalWidth*100 > 100) {
+            clearInterval(interval)
+            $("#times").html("Done!")
+        }
         console.log(t)
         if (t == times[i]) {
             console.log('worked')
