@@ -12,7 +12,12 @@ urlpatterns = patterns('',
     url(r'^step2$', 'spatula.views.step2'),
     url(r'^step3$', 'spatula.views.step3'),
     url(r'^step4$', 'spatula.views.step4'),
-    url(r'^summary$', 'spatula.views.summary')
+    url(r'^step5$', 'spatula.views.step5'),
+    url(r'^mozarella$', 'spatula.views.mozarella'),
+    url(r'^mozarella2$', 'spatula.views.mozarella2'),
+    url(r'^summary$', 'spatula.views.summary'),
+    url(r'^summary2$', 'spatula.views.summary2')
+
 
     # url(r'^spatula/', include('spatula.foo.urls')),
 

@@ -12,7 +12,6 @@
     <style>
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-        background-attachment: fixed;
       }
 
 	  h2{
@@ -21,11 +20,30 @@
 	  }
 	
 		li {
-			text-shadow: none;	
+			text-shadow: none;
+		}
+		
+		ul.indent li {
+			margin-left:20px;
+			
+		}
+		
+		.alpha-white {
+			/* Fallback for web browsers that doesn't support RGBa */
+			background: rgb(255, 255, 255);
+			/* RGBa with 0.6 opacity */
+			background: rgba(255, 255, 255, 0.8);
+		}
+		
+		.alpha-black {
+			/* Fallback for web browsers that doesn't support RGBa */
+			background: rgb(0, 0, 0);
+			/* RGBa with 0.6 opacity */
+			background: rgba(0, 0, 0, 0.85);
 		}
 
 	  .fade {
-		   opacity: .80;
+		   opacity: .85;
 		   transition: opacity .25s ease-in-out;
 		   -moz-transition: opacity .25s ease-in-out;
 		   -webkit-transition: opacity .25s ease-in-out;
@@ -34,18 +52,7 @@
 	  .fade:hover {
 	      opacity: 1;
 	  }
-
-	  .recipe {
-	  	cursor: pointer;
-	  	target-new: tab;
-	  }
 	  
-	  .recipe:hover {
-	  	box-shadow: 0 0 1em black;
-		-moz-box-shadow: 0 0 1em black;
-		-webkit-box-shadow: 0 0 1em black;
-
-	  }
 		@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 		@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 		@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -134,62 +141,76 @@
 
 	<div class="container" style="width: 58%;margin:25px auto;">
 
-		<div class="row-fluid" style="width:100%;margin:50px auto;">
+		<!-- <div class="alert alert-info">
+		  <button type="button" class="close" data-dismiss="alert">×</button>
+		  Once you're ready to start cooking, press the <strong>Start Cooking</strong> button on the left.
+		</div> -->
+		
+		<div class="row-fluid" style="width:100%;margin:40px auto;">
 			<div class="span12">
 
-				<h2> Showing 9 search results for 
+				<!-- <h2>Let's cook the following for
 					<div class="btn-group">
-					  <a class="btn btn-info btn-large btn" type="button" href="#">
-					    bruschetta
+					  <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
+					    1
+					    <span class="caret"></span>
 					  </a>
+					  <ul class="dropdown-menu">
+					    <li><a href="#">2</a></li>
+					    <li><a href="#">3</a></li>
+					    <li><a href="#">4</a></li>
+					    <li><a href="#">5</a></li>
+					    <li><a href="#">6</a></li>
+					  </ul>
 					</div>
-				:
-				</h2>
+				people:
+				</h2> -->
 
-				<div class="row-fluid" style="margin-top:50px;text-align:center;">
-					<div class="span4 fade-in one">
-						<img class="recipe" type="button"  src="{{ STATIC_URL }}img/chocolateRaspberry.png">
-						<a href="/step4" class="recipe btn btn-large btn fade" type="button" style="margin-top:-90px;">Add Recipe</a>
-					</div>
-					<div class="span4 fade-in two">
-						<img class="recipe" src="{{ STATIC_URL }}img/mozarella.png">
-						<a href="step5" class="recipe btn btn-large btn fade" type="button" style="margin-top:-90px;">Add Recipe</a>
-					</div>
-					<div class="span4 fade-in three">
-						<img class="recipe" src="{{ STATIC_URL }}img/caprese.png">
-						<a href="#" class="recipe btn btn-large btn fade" type="button" style="margin-top:-90px;">Add Recipe</a>
+				<div class="row-fluid" style="text-align:left;">
+					
+					
+					<div class="pull-left" style="margin-top:30px;height:350px;width:100%;color:#000;">
+						
+						<div class="well span3" style="padding:5px 5px 10px;">
+							<img src="{{ STATIC_URL }}img/mozarella.jpeg">
+							<ul class="nav nav-list" style="margin-top:15px;">
+							  <li class="active"><a href="#">Mozarella and Basil Bruschetta</a></li>
+							  <a href="summary2" class="recipe btn btn-large btn fade" type="button" style="margin-top:10px;">View Summary</a>
+							  <a href="step5" class="recipe btn btn-large btn fade" type="button" style="margin-top:10px;">Continue Browsing</a>
+							  <a href="mozarella" class="recipe btn btn-large btn fade" type="button" style="margin-top:10px;">Remove Recipe</a>
+							</ul>
+						</div>
+						
+						<div class="well span9" style="font-size:85%;">
+							<ul class="span3 pull-left indent" style="margin-left:10px;">
+								<p class="lead">Ingredients</p>
+								<span class="label label-success">Produce</span>
+								<li>Either oregano or basil, Leaves from (1)</li>
+								<li>16 oz of fresh tomatoes - I had cherry tomatoes and they were perfect cut in half</li>
+								<span class="label label-important">Condiments</span>
+								<li>Balsamic vinegar (1)</li>
+								<span class="label label-warning">Cooking & Baking</span>
+								<li>Olive oil (1 tsp)</li>
+								<li>Salt and fresh pepper (1)</li>
+								<li>Italian bread, good crusty (6 slices)</li>
+								<span class="label label-info">Dairy</span>
+								<li>Mozzarella, fresh thin (8 oz)</li>
+							</ul>
+							<div class="span8 pull-left">
+								<ol>
+									<p class="lead">Preparation</p>
+									<p>Preheat the oven to 350 degrees.</p>
+<p>Slice cherry tomatoes in half or if using larger tomatoes, chop then into good size chunks and let them drain.</p> <p>Drizzle with some olive oil and balsamic vinegar and gently toss them to coat.</p>
+<p>Slice the bread and lay the slices on a cookie sheet (or two if necessary)</p>
+<p>Brush the top with olive oil and bake for approximately 10 minutes. Remove from oven.</p>
+<p>Layer the slices of mozzarella on top of each slice of bread, top with the tomatoes and return the bread to the oven for 2-3 minutes to warm the tomatoes and soften the cheese.</p>
+<p>Remove from oven; drizzle with more olive oil, top with herb(s) and sprinkle with salt and pepper.</p>
+								</ol>
+							</div>
+						</div>
+						
 					</div>
 				</div>
-
-				<div class="row-fluid" style="margin-top:50px;text-align:center;">
-					<div class="span4 fade-in one">
-						<img class="recipe" src="{{ STATIC_URL }}img/smokedSalmonAndGoatCheese.png">
-						<a href="/" class="recipe btn btn-large btn fade" type="button" style="margin-top:-90px;">Add Recipe</a>
-					</div>
-					<div class="span4 fade-in two">
-						<img class="recipe" src="{{ STATIC_URL }}img/roastedGarlicAndTomato.png">
-						<a href="#" class="recipe btn btn-large btn fade" type="button" style="margin-top:-90px;">Add Recipe</a>
-					</div>
-					<div class="span4 fade-in three">
-						<img class="recipe" src="{{ STATIC_URL }}img/tomatoAndBasil.png">
-						<a href="#" class="recipe btn btn-large btn fade" type="button" style="margin-top:-90px;">Add Recipe</a>
-					</div>
-				</div>
-
-				<div class="row-fluid" style="margin-top:50px;text-align:center;">
-					<div class="span4 fade-in one">
-						<img class="recipe" src="{{ STATIC_URL }}img/mushroomAndArugula.png">
-						<a href="/" class="recipe btn btn-large btn fade" type="button" style="margin-top:-90px;">Add Recipe</a>
-					</div>
-					<div class="span4 fade-in two">
-						<img class="recipe" src="{{ STATIC_URL }}img/lemonHoneyRicotta.png">
-						<a href="#" class="recipe btn btn-large btn fade" type="button" style="margin-top:-90px;">Add Recipe</a>
-					</div>
-					<div class="span4 fade-in three">
-						<img class="recipe" src="{{ STATIC_URL }}img/grilledChicken.png">
-						<a href="#" class="recipe btn btn-large btn fade" type="button" style="margin-top:-90px;">Add Recipe</a>
-					</div>
-				</div>								
 
 			</div>
 		</div>
