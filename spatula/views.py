@@ -40,6 +40,10 @@ def summary2(request):
     return render_to_response('summary2.html', {},context_instance=RequestContext(request)
 )
 
+def topbar(request):
+    return render_to_response('topbar.html', {},context_instance=RequestContext(request)
+                              )
+
 def search(request):
     search = request.GET['query']
     return render_to_response('step4.html', {},context_instance=RequestContext(request))
