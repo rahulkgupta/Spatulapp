@@ -30,5 +30,9 @@ def search(request):
 
 
 def timeline(request):
-    return render_to_response('timeline.html', {},context_instance=RequestContext(request)
-)
+    if not 't' in request.session or request.session['t'] == True:
+        request.session['t'] = False
+        return render_to_response('timeline.html', {},context_instance=RequestContext(request))
+    else:
+        request.session['t'] = True
+        return render_to_response('timeline2.html', {},context_instance=RequestContext(request))

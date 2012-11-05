@@ -65,7 +65,7 @@
 
         <div class="span3">
           <ul class="nav nav-tabs nav-stacked">
-            <li><a href="#">Pause Cooking</a></li>
+            <li><a href="#" id="resume">Resume Cooking</a></li>
             <li><a href="#" id="add">Add Recipe</a></li>
             <li><a href="#">Remove Recipe</a></li>
             <li><a href="#">Cancel Cooking</a></li>
@@ -73,8 +73,8 @@
         </div>
 
         <div id="timeline-container" class="span9">
-          <div id="prog-parent" class=" progress progress-success progress-striped active">
-            <div id="progress" class="bar" style="width: 0%;"></div>
+          <div id="prog-parent" class=" progress progress-danger">
+            <div id="progress" class="bar" style="width: 10%;"></div>
           </div>
           <div id="times"/>
         </div>
@@ -116,7 +116,7 @@
     <script src="{{ STATIC_URL }}js/bootstrap-collapse.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap-carousel.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap-typeahead.js"></script>
-    <script src="{{ STATIC_URL }}js/timeline.js"></script>
+    <script src="{{ STATIC_URL }}js/timeline2.js"></script>
 
   </body>
 </html>
