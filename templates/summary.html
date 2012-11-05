@@ -20,11 +20,30 @@
 	  }
 	
 		li {
-			text-shadow: none;	
+			text-shadow: none;
+		}
+		
+		ul.indent li {
+			margin-left:20px;
+			
+		}
+		
+		.alpha-white {
+			/* Fallback for web browsers that doesn't support RGBa */
+			background: rgb(255, 255, 255);
+			/* RGBa with 0.6 opacity */
+			background: rgba(255, 255, 255, 0.8);
+		}
+		
+		.alpha-black {
+			/* Fallback for web browsers that doesn't support RGBa */
+			background: rgb(0, 0, 0);
+			/* RGBa with 0.6 opacity */
+			background: rgba(0, 0, 0, 0.85);
 		}
 
 	  .fade {
-		   opacity: .70;
+		   opacity: .85;
 		   transition: opacity .25s ease-in-out;
 		   -moz-transition: opacity .25s ease-in-out;
 		   -webkit-transition: opacity .25s ease-in-out;
@@ -122,10 +141,15 @@
 
 	<div class="container" style="width: 58%;margin:25px auto;">
 
-		<div class="row-fluid" style="width:100%;margin:50px auto;">
+		<!-- <div class="alert alert-info">
+		  <button type="button" class="close" data-dismiss="alert">×</button>
+		  Once you're ready to start cooking, press the <strong>Start Cooking</strong> button on the left.
+		</div> -->
+		
+		<div class="row-fluid" style="width:100%;margin:40px auto;">
 			<div class="span12">
 
-				<h2>Let's cook the following for
+				<!-- <h2>Let's cook the following for
 					<div class="btn-group">
 					  <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
 					    1
@@ -140,20 +164,55 @@
 					  </ul>
 					</div>
 				people:
-				</h2>
+				</h2> -->
 
-				<div class="row-fluid" style="margin-top:50px;text-align:center;">
-					<div class="span4 fade-in one">
-						<img src="{{ STATIC_URL }}img/st-andrews.png">
-						<a href="/" class="btn btn-large btn fade" type="button" style="margin-top:-90px;">Add Recipe List</a>
+				<div class="row-fluid" style="text-align:left;">
+					
+					<button class="btn btn-large btn-success span3" type="button">Start Cooking</button>
+					<div class="btn-group pull-right">
+					  <button class="btn btn-large active"><i class="icon-list"></i> Information</button>
+					  <button class="btn btn-large"><i class="icon-calendar"></i> Timeline</button>
 					</div>
-					<div class="span4 fade-in two">
-						<img src="{{ STATIC_URL }}img/tiger.png">
-						<a href="#" class="btn btn-large btn fade" type="button" style="margin-top:-90px;">Add Recipe List</a>
-					</div>
-					<div class="span4 fade-in three">
-						<img src="{{ STATIC_URL }}img/brunch.png">
-						<a href="summary" class="btn btn-large btn fade" type="button" style="margin-top:-90px;">Add Recipe List</a>
+					
+					<div class="pull-left" style="margin-top:30px;height:350px;width:100%;color:#000;">
+						
+						<div class="well span3" style="padding:5px 5px 10px;">
+							<img src="{{ STATIC_URL }}img/salad.jpg">
+							<ul class="nav nav-list" style="margin-top:15px;">
+							  <li class="nav-header">Recipes</li>
+							  <li class="active"><a href="#">California Bleu</a></li>
+							  <li><a href="#">Surf n' Turf Tacos</a></li>
+							  <li><a href="#">California Roll Burger</a></li>
+							  <li><a href="#">Classic Steak and Lobster</a></li>
+							</ul>
+						</div>
+						
+						<div class="well span9" style="font-size:85%;">
+							<ul class="span3 pull-left indent" style="margin-left:10px;">
+								<p class="lead">Ingredients</p>
+								<span class="label label-success">Produce</span>
+								<li>Cilantro (1 tbsp)</li>
+								<li>Haas Avocado (1)</li>
+								<li>Jalapeno (1)</li>
+								<li>Red onion (1/4 cup)</li>
+								<li>Tomato, medium (1)</li>
+								<span class="label label-important">Seafood</span>
+								<li>Shrimp, jumbo cooked (1 lb)</li>
+								<span class="label label-warning">Cooking & Baking</span>
+								<li>Olive oil (1 tsp)</li>
+								<li>Salt and fresh pepper (1)</li>
+								<span class="label label-info">Drinks</span>
+								<li>Limes, juice of (2)</li>
+							</ul>
+							<div class="span8 pull-left">
+								<ol>
+									<p class="lead">Preparation</p>
+									<p>In a large, dry skillet, brown the bacon over moderate heat until crisp and golden, about 5 minutes. With a slotted spoon, transfer the bacon to several layers of paper towels to absorb the fat. Blot the top of the bacon with several layers of paper towels to absorb any additional fat. Set aside.</p>
+									<p>In a large, shallow bowl, combine the bacon, lettuce, tomatoes, avocado, cheese, and spring onions. Toss with just enough dressing to lightly and evenly coat the ingredients. Season generously with pepper, and serve.</p>
+								</ol>
+							</div>
+						</div>
+						
 					</div>
 				</div>
 

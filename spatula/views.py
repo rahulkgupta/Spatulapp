@@ -16,6 +16,10 @@ def step3(request):
     return render_to_response('step3.html', {},context_instance=RequestContext(request)
 )
 
+def summary(request):
+    return render_to_response('summary.html', {},context_instance=RequestContext(request)
+)
+
 def search(request):
     search = request.GET['query']
     return HttpResponse("Search results " + search)
