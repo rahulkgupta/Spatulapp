@@ -31,6 +31,10 @@
 			margin:5px 15px;
 		}
 		
+		.indent {
+			margin-left:33px;
+		}
+		
 		ul.indent li {
 			margin-left:15px;
 		}
@@ -175,52 +179,52 @@
 
 				<div class="row-fluid" style="text-align:left;">
 					
-					<a href="timeline"><button class="btn btn-large btn-success span3" type="button">Start Cooking</button></a>
+					<a href="timeline" <button class="btn btn-large btn-success span3" type="button">Start Cooking</button></a>
 					<div class="btn-group pull-right">
-					  <button class="btn btn-large active"><i class="icon-list"></i> <a href="#">Information</a></button>
-					  <button class="btn btn-large"><i class="icon-calendar"></i> <a href="sumtimeline">Timeline</a></button>
+					  <button class="btn btn-large"><i class="icon-list"></i> <a href="summary">Information</a></button>
+					  <button class="btn btn-large active"><i class="icon-calendar"></i> <a href="#">Timeline</a></button>
 					</div>
 					
 					<div class="pull-left" style="margin-top:30px;height:350px;width:100%;color:#000;">
 						
-						<div class="well span3" style="padding:5px 5px 10px;">
+						<div class="well span3" style="padding:5px 5px;">
 							<img src="{{ STATIC_URL }}img/salad.jpg">
-							<ul class="nav nav-list" style="margin-top:15px;">
-							  <li class="nav-header">Recipes</li>
-							  <li class="active"><a href="#">Zesty Shrimp Salad</a></li>
-							  <li><a href="#">Surf n' Turf Tacos</a></li>
-							  <li><a href="#">California Roll Burger</a></li>
-							  <li><a href="#">Classic Steak and Lobster</a></li>
-							</ul>
+							<table class="table table-bordered alpha-white" style="font-size:85%;">
+							  <tbody>
+								<tr>
+							      <td>Cook Time</td>
+							      <td><span class="label label-inverse">60 mins</span></td>
+							    </tr>
+								<tr>
+							      <td>Appliances</td>
+							      <td><span class="label label-inverse">Oven</span><span class="label label-inverse">Stove</span></td>
+							    </tr>
+							  </tbody>
+							</table>
 						</div>
 						
 						<!-- <div class="span9" style="font-size:85%;"> -->
-							<table class="table table-bordered table-striped span9" style="font-size:90%;">
-							  <thead class="alpha-white">
-							    <tr>
-							      <th class="span3"><p class="lead">Ingredients</p></th>
-							      <th><p class="lead">Preparation</p></th>
-							    </tr>
-							  </thead>
+							<table class="table table-bordered span9 alpha-white" style="font-size:90%;">
 							  <tbody>
+								<tr>
+							      <td><span class="badge pull-right">Time (mins)</span></td>
+							      <td><span class="badge indent">5</span><span class="badge indent">10</span><span class="badge indent">15</span><span class="badge indent">20</span><span class="badge indent">25</span><span class="badge indent">30</span><span class="badge indent">35</span></td>
+							    </tr>
 							    <tr>
-							      <td>	<ul class="indent" style="margin-left:10px;">
-										<span class="label label-success">Produce</span>
-										<li>Cilantro (1 tbsp)</li>
-										<li>Haas Avocado (1)</li>
-										<li>Jalapeno (1)</li>
-										<li>Red onion (1/4 cup)</li>
-										<li>Tomato, medium (1)</li>
-										<span class="label label-important">Seafood</span>
-										<li>Shrimp, jumbo cooked</li>
-										<span class="label label-warning">Cooking & Baking</span>
-										<li>Olive oil (1 tsp)</li>
-										<li>Salt and fresh pepper (1)</li>
-										<span class="label label-info">Drinks</span>
-										<li>Limes, juice of (2)</li>
-									</ul></td>
-							      <td>	<p>In a large, dry skillet, brown the bacon over moderate heat until crisp and golden, about 5 minutes. With a slotted spoon, transfer the bacon to several layers of paper towels to absorb the fat. Blot the top of the bacon with several layers of paper towels to absorb any additional fat. Set aside.</p>
-									<p>In a large, shallow bowl, combine the bacon, lettuce, tomatoes, avocado, cheese, and spring onions. Toss with just enough dressing to lightly and evenly coat the ingredients. Season generously with pepper, and serve.</p></td>
+							      <td><span class="label label-success pull-right">Zesty Shimp Salad</span></td>
+							      <td><span class="label label-success indent">Chop Lettuce</span><span class="indent"></span><span class="label label-success indent">Mix Greens</span></td>
+							    </tr>
+							    <tr>
+							      <td><span class="label label-important pull-right">Surf n' Turf Tacos</span></td>
+							      <td><span class="label label-important">Chop Steak</span><span class="label label-important indent">Place Steak on Grill</span></td>
+							    </tr>
+							    <tr>
+							      <td><span class="label label-warning pull-right">California Roll Burger</span></td>
+							      <td></td>
+							    </tr>
+							    <tr>
+							      <td><span class="label label-info pull-right">Classic Steak & Lobster</span></td>
+							      <td></td>
 							    </tr>
 							  </tbody>
 							</table>

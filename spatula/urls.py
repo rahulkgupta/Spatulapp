@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     url(r'^mozarella2$', 'spatula.views.mozarella2'),
     url(r'^summary$', 'spatula.views.summary'),
     url(r'^summary2$', 'spatula.views.summary2'),
+    url(r'^sumtimeline$', 'spatula.views.sumtimeline'),
     url(r'^topbar$', 'spatula.views.topbar')
 
 
