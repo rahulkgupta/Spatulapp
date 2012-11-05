@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^timeline$', 'spatula.views.timeline'),
     url(r'^step2$', 'spatula.views.step2'),
     url(r'^step3$', 'spatula.views.step3'),
+    url(r'^step4$', 'spatula.views.step4'),
     url(r'^summary$', 'spatula.views.summary')
 
     # url(r'^spatula/', include('spatula.foo.urls')),
