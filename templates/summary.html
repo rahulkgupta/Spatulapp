@@ -19,27 +19,34 @@
 		text-shadow: black 0.1em 0.1em 0.2em;
 	  }
 	
+		.label {
+			margin-left:-5px;
+		}
+	
 		li {
 			text-shadow: none;
 		}
 		
+		.lead {
+			margin:5px 15px;
+		}
+		
 		ul.indent li {
-			margin-left:20px;
-			
+			margin-left:15px;
 		}
 		
 		.alpha-white {
 			/* Fallback for web browsers that doesn't support RGBa */
 			background: rgb(255, 255, 255);
 			/* RGBa with 0.6 opacity */
-			background: rgba(255, 255, 255, 0.8);
+			background: rgba(245, 245, 245, 1);
 		}
 		
 		.alpha-black {
 			/* Fallback for web browsers that doesn't support RGBa */
 			background: rgb(0, 0, 0);
 			/* RGBa with 0.6 opacity */
-			background: rgba(0, 0, 0, 0.85);
+			background: rgba(0, 0, 0, 0.15);
 		}
 
 	  .fade {
@@ -112,7 +119,7 @@
   </head>
 
   <body style="background-image:url('{{ STATIC_URL }}img/kitchen.jpg'); background-size: 100% auto; color:#FFF;">
-
+	
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -180,38 +187,45 @@
 							<img src="{{ STATIC_URL }}img/salad.jpg">
 							<ul class="nav nav-list" style="margin-top:15px;">
 							  <li class="nav-header">Recipes</li>
-							  <li class="active"><a href="#">California Bleu</a></li>
+							  <li class="active"><a href="#">Zesty Shrimp Salad</a></li>
 							  <li><a href="#">Surf n' Turf Tacos</a></li>
 							  <li><a href="#">California Roll Burger</a></li>
 							  <li><a href="#">Classic Steak and Lobster</a></li>
 							</ul>
 						</div>
 						
-						<div class="well span9" style="font-size:85%;">
-							<ul class="span3 pull-left indent" style="margin-left:10px;">
-								<p class="lead">Ingredients</p>
-								<span class="label label-success">Produce</span>
-								<li>Cilantro (1 tbsp)</li>
-								<li>Haas Avocado (1)</li>
-								<li>Jalapeno (1)</li>
-								<li>Red onion (1/4 cup)</li>
-								<li>Tomato, medium (1)</li>
-								<span class="label label-important">Seafood</span>
-								<li>Shrimp, jumbo cooked (1 lb)</li>
-								<span class="label label-warning">Cooking & Baking</span>
-								<li>Olive oil (1 tsp)</li>
-								<li>Salt and fresh pepper (1)</li>
-								<span class="label label-info">Drinks</span>
-								<li>Limes, juice of (2)</li>
-							</ul>
-							<div class="span8 pull-left">
-								<ol>
-									<p class="lead">Preparation</p>
-									<p>In a large, dry skillet, brown the bacon over moderate heat until crisp and golden, about 5 minutes. With a slotted spoon, transfer the bacon to several layers of paper towels to absorb the fat. Blot the top of the bacon with several layers of paper towels to absorb any additional fat. Set aside.</p>
-									<p>In a large, shallow bowl, combine the bacon, lettuce, tomatoes, avocado, cheese, and spring onions. Toss with just enough dressing to lightly and evenly coat the ingredients. Season generously with pepper, and serve.</p>
-								</ol>
-							</div>
-						</div>
+						<!-- <div class="span9" style="font-size:85%;"> -->
+							<table class="table table-bordered table-striped span9" style="font-size:90%;">
+							  <thead class="alpha-white">
+							    <tr>
+							      <th class="span3"><p class="lead">Ingredients</p></th>
+							      <th><p class="lead">Preparation</p></th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+							      <td>	<ul class="indent" style="margin-left:10px;">
+										<span class="label label-success">Produce</span>
+										<li>Cilantro (1 tbsp)</li>
+										<li>Haas Avocado (1)</li>
+										<li>Jalapeno (1)</li>
+										<li>Red onion (1/4 cup)</li>
+										<li>Tomato, medium (1)</li>
+										<span class="label label-important">Seafood</span>
+										<li>Shrimp, jumbo cooked</li>
+										<span class="label label-warning">Cooking & Baking</span>
+										<li>Olive oil (1 tsp)</li>
+										<li>Salt and fresh pepper (1)</li>
+										<span class="label label-info">Drinks</span>
+										<li>Limes, juice of (2)</li>
+									</ul></td>
+							      <td>	<p>In a large, dry skillet, brown the bacon over moderate heat until crisp and golden, about 5 minutes. With a slotted spoon, transfer the bacon to several layers of paper towels to absorb the fat. Blot the top of the bacon with several layers of paper towels to absorb any additional fat. Set aside.</p>
+									<p>In a large, shallow bowl, combine the bacon, lettuce, tomatoes, avocado, cheese, and spring onions. Toss with just enough dressing to lightly and evenly coat the ingredients. Season generously with pepper, and serve.</p></td>
+							    </tr>
+							  </tbody>
+							</table>
+							
+						<!-- </div> -->
 						
 					</div>
 				</div>
