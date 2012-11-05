@@ -26,7 +26,7 @@ def summary(request):
 
 def search(request):
     search = request.GET['query']
-    return HttpResponse("Search results " + search)
+    return render_to_response('step4.html', {},context_instance=RequestContext(request))
 
 
 def timeline(request):
