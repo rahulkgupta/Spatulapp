@@ -25,6 +25,11 @@
 	
 		li {
 			text-shadow: none;
+			font-weight:bold;
+		}
+		
+		a {
+			color:#000;
 		}
 		
 		.lead {
@@ -118,7 +123,7 @@
     <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}ico/apple-touch-icon-57-precomposed.png"> -->
   </head>
 
-  <body style="background-image:url('{{ STATIC_URL }}img/kitchen.jpg'); background-size: 100% auto; color:#FFF;">
+  <body style="background-image:url('{{ STATIC_URL }}img/kitchen.jpg'); background-size: 100% auto; color:#000;">
 	
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
@@ -155,75 +160,40 @@
 		
 		<div class="row-fluid" style="width:100%;margin:40px auto;">
 			<div class="span12">
-
-				<!-- <h2>Let's cook the following for
-					<div class="btn-group">
-					  <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
-					    1
-					    <span class="caret"></span>
-					  </a>
-					  <ul class="dropdown-menu">
-					    <li><a href="#">2</a></li>
-					    <li><a href="#">3</a></li>
-					    <li><a href="#">4</a></li>
-					    <li><a href="#">5</a></li>
-					    <li><a href="#">6</a></li>
-					  </ul>
-					</div>
-				people:
-				</h2> -->
+				
+				<div class="alert alert-info">
+			        <button type="button" class="close" data-dismiss="alert">×</button>
+			        <strong>Remember! If you leave this page, you can always come back and resume cooking by clicking the timline tab on the top bar.</strong>
+			    </div>
 
 				<div class="row-fluid" style="text-align:left;">
-					
-					<button class="btn btn-large btn-success span3" type="button">Start Cooking</button>
+					<!-- <button class="btn btn-large btn-success span3" type="button">Start Cooking</button>
 					<div class="btn-group pull-right">
 					  <button class="btn btn-large active"><i class="icon-list"></i> Information</button>
 					  <button class="btn btn-large"><i class="icon-calendar"></i> Timeline</button>
-					</div>
+					</div> -->
+					
+					
 					
 					<div class="pull-left" style="margin-top:30px;height:350px;width:100%;color:#000;">
 						
-						<div class="well span3" style="padding:5px 5px 10px;">
-							<img src="{{ STATIC_URL }}img/salad.jpg">
-							<ul class="nav nav-list" style="margin-top:15px;">
-							  <li class="nav-header">Recipes</li>
-							  <li class="active"><a href="#">Zesty Shrimp Salad</a></li>
-							  <li><a href="#">Surf n' Turf Tacos</a></li>
-							  <li><a href="#">California Roll Burger</a></li>
-							  <li><a href="#">Classic Steak and Lobster</a></li>
-							</ul>
+							<div class="btn-group btn-group-vertical span3">
+								<button class="btn btn-large"><a href="#" id="resume"><i class="icon-play pull-right"></i>Resume Cooking</a></button>
+								<button class="btn btn-large"><a href="#" id="add"><i class="icon-plus-sign pull-right"></i>Add Recipe</a></button>
+								<button class="btn btn-large"><a href="#"><i class="icon-minus-sign pull-right"></i>Remove Recipe</a></button>
+								<button class="btn btn-large"><a href="#"><i class="icon-stop pull-right"></i>Cancel Cooking</a></button>
 						</div>
 						
 						<!-- <div class="span9" style="font-size:85%;"> -->
-							<table class="table table-bordered table-striped span9" style="font-size:90%;">
-							  <thead class="alpha-white">
-							    <tr>
-							      <th class="span3"><p class="lead">Ingredients</p></th>
-							      <th><p class="lead">Preparation</p></th>
-							    </tr>
-							  </thead>
-							  <tbody>
-							    <tr>
-							      <td>	<ul class="indent" style="margin-left:10px;">
-										<span class="label label-success">Produce</span>
-										<li>Cilantro (1 tbsp)</li>
-										<li>Haas Avocado (1)</li>
-										<li>Jalapeno (1)</li>
-										<li>Red onion (1/4 cup)</li>
-										<li>Tomato, medium (1)</li>
-										<span class="label label-important">Seafood</span>
-										<li>Shrimp, jumbo cooked</li>
-										<span class="label label-warning">Cooking & Baking</span>
-										<li>Olive oil (1 tsp)</li>
-										<li>Salt and fresh pepper (1)</li>
-										<span class="label label-info">Drinks</span>
-										<li>Limes, juice of (2)</li>
-									</ul></td>
-							      <td>	<p>In a large, dry skillet, brown the bacon over moderate heat until crisp and golden, about 5 minutes. With a slotted spoon, transfer the bacon to several layers of paper towels to absorb the fat. Blot the top of the bacon with several layers of paper towels to absorb any additional fat. Set aside.</p>
-									<p>In a large, shallow bowl, combine the bacon, lettuce, tomatoes, avocado, cheese, and spring onions. Toss with just enough dressing to lightly and evenly coat the ingredients. Season generously with pepper, and serve.</p></td>
-							    </tr>
-							  </tbody>
-							</table>
+						<div id="timeline-container" class="span9 well" style="min-height:171px;">
+				          <div id="prog-parent" class=" progress progress-danger">
+					         <div id="progress" class="bar" style="width: 10%;"></div>
+				          </div>
+						<blockquote>
+				          <div id="times" class="lead"/>
+						</blockquote>
+				        </div>
+				        </div>
 							
 						<!-- </div> -->
 						
@@ -235,7 +205,26 @@
 
 
 	</div> <!-- /container -->
-
+	
+    <div id="add-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Add a recipe</h3>
+      </div>
+      <div class="modal-body">
+        <strong>Search for a recipe. Once you are done, click the timline tab on the topbar to resume cooking.</strong>
+        <div>
+          <form name="input" class="navbar-search" action="search" method="get">
+            <input type="text" class="search-query" name="query" placeholder="Search">
+            <button type="submit" class="btn btn-primary" >Search</button>
+          </form>
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -252,6 +241,7 @@
     <script src="{{ STATIC_URL }}js/bootstrap-collapse.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap-carousel.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap-typeahead.js"></script>
+    <script src="{{ STATIC_URL }}js/timeline2.js"></script>
 
   </body>
 </html>
