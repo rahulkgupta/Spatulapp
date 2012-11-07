@@ -1,6 +1,8 @@
 var times = [0, 10, 20]
 var instructions = ["Setup cookware", "Get food items", "Boil pasta"]
-var labels =["Pasta", "Bruschetta", "Pasta"]
+var instructions = ["Cook Sausage","Chop Onions", "Boil pasta"]
+
+var labels =["Sausage", "Pasta", "Pasta"]
 
 
 $(document).ready(function() {
