@@ -19,27 +19,34 @@
 		text-shadow: black 0.1em 0.1em 0.2em;
 	  }
 	
+		.label {
+			margin-left:-5px;
+		}
+	
 		li {
 			text-shadow: none;
 		}
 		
+		.lead {
+			margin:5px 15px;
+		}
+		
 		ul.indent li {
-			margin-left:20px;
-			
+			margin-left:15px;
 		}
 		
 		.alpha-white {
 			/* Fallback for web browsers that doesn't support RGBa */
 			background: rgb(255, 255, 255);
 			/* RGBa with 0.6 opacity */
-			background: rgba(255, 255, 255, 0.8);
+			background: rgba(245, 245, 245, 1);
 		}
 		
 		.alpha-black {
 			/* Fallback for web browsers that doesn't support RGBa */
 			background: rgb(0, 0, 0);
 			/* RGBa with 0.6 opacity */
-			background: rgba(0, 0, 0, 0.85);
+			background: rgba(0, 0, 0, 0.15);
 		}
 
 	  .fade {
@@ -131,8 +138,8 @@
               <form name="input" class="navbar-search" action="search" method="get">
                 <input type="text" class="search-query" name="query" placeholder="Search">
               </form>
-              <li><a href="#kitchen">Kitchen</a></li>
-              <li><a href="#account">Joe</a></li>
+              <li><a href="#kitchen">Summary</a></li>
+              <li><a href="#account">Joe (1)</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -181,9 +188,16 @@
 							</ul>
 						</div>
 						
-						<div class="well span9" style="font-size:85%;">
-							<ul class="span3 pull-left indent" style="margin-left:10px;">
-								<p class="lead">Ingredients</p>
+						<table class="table table-bordered table-striped span9" style="font-size:90%;">
+						  <thead class="alpha-white">
+						    <tr>
+						      <th class="span3"><p class="lead">Ingredients</p></th>
+						      <th><p class="lead">Preparation</p></th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <td>	<ul class="indent" style="margin-left:10px;">
 								<span class="label label-success">Produce</span>
 								<li>Either oregano or basil, Leaves from (1)</li>
 								<li>16 oz of fresh tomatoes - I had cherry tomatoes and they were perfect cut in half</li>
@@ -195,19 +209,16 @@
 								<li>Italian bread, good crusty (6 slices)</li>
 								<span class="label label-info">Dairy</span>
 								<li>Mozzarella, fresh thin (8 oz)</li>
-							</ul>
-							<div class="span8 pull-left">
-								<ol>
-									<p class="lead">Preparation</p>
-									<p>Preheat the oven to 350 degrees.</p>
-<p>Slice cherry tomatoes in half or if using larger tomatoes, chop then into good size chunks and let them drain.</p> <p>Drizzle with some olive oil and balsamic vinegar and gently toss them to coat.</p>
-<p>Slice the bread and lay the slices on a cookie sheet (or two if necessary)</p>
-<p>Brush the top with olive oil and bake for approximately 10 minutes. Remove from oven.</p>
-<p>Layer the slices of mozzarella on top of each slice of bread, top with the tomatoes and return the bread to the oven for 2-3 minutes to warm the tomatoes and soften the cheese.</p>
-<p>Remove from oven; drizzle with more olive oil, top with herb(s) and sprinkle with salt and pepper.</p>
-								</ol>
-							</div>
-						</div>
+								</ul></td>
+						      <td>	<p>Preheat the oven to 350 degrees.</p>
+	<p>Slice cherry tomatoes in half or if using larger tomatoes, chop then into good size chunks and let them drain.</p> <p>Drizzle with some olive oil and balsamic vinegar and gently toss them to coat.</p>
+	<p>Slice the bread and lay the slices on a cookie sheet (or two if necessary)</p>
+	<p>Brush the top with olive oil and bake for approximately 10 minutes. Remove from oven.</p>
+	<p>Layer the slices of mozzarella on top of each slice of bread, top with the tomatoes and return the bread to the oven for 2-3 minutes to warm the tomatoes and soften the cheese.</p>
+	<p>Remove from oven; drizzle with more olive oil, top with herb(s) and sprinkle with salt and pepper.</p></td>
+						    </tr>
+						  </tbody>
+						</table>
 						
 					</div>
 				</div>
