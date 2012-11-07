@@ -1,5 +1,6 @@
 var times = [10, 20, 30]
-var instructions = ["Get food items","Cut Bread", "Boil pasta"]
+var instructions = ["Chop Onions","Cut Bread", "Boil pasta"]
+var labels =["Pasta", "Bruschetta", "Pasta"]
 
 $(document).ready(function() {
     $("#add").click(
@@ -11,13 +12,18 @@ $(document).ready(function() {
     var t = 8
     for (var i = 0; i < times.length; i++) {
         if (i == 0)
-            $("#current").append("<span style='margin-right: 10px' class='label label-success'>Now</span><span>" + instructions[i] + "</span>")
+            $("#current").append("<span style='margin-right: 10px' class='label label-info'>" + 
+                                labels[i] + "</span><span>" + 
+                                instructions[i] + "</span><span style='margin-right: 10px' class='label pull-right label-success'>Now</span>")
         else
-            $("#times").append("<div>" + instructions[i] + "</div>")
+            $("#times").append("<div><span style='margin-right: 10px' class='label label-info'>" + 
+                                labels[i] + "</span><span><span>" + instructions[i] + "</span></div>")
     }
     i = 1
     $("#resume").click(
         function() {
+            $("#resume").html("<i class='icon-pause pull-right'></i>Pause Cooking")
+            // $(".icon-play").addClass('.icon-pause')
             $("#prog-parent").removeClass("progress-danger")
             $("#prog-parent").addClass("progress-success progress-striped active")
 
@@ -35,9 +41,12 @@ $(document).ready(function() {
                     $("#current").html("")
                     for (var j = i; j < times.length; j++) {
                         if (i == j)
-                            $("#current").append("<span style='margin-right: 10px' class='label label-success'>Now</span><span>" + instructions[j] + "</span>")
+                            $("#current").append("<span style='margin-right: 10px' class='label label-info'>" + 
+                                labels[j] + "</span><span>" + 
+                                instructions[j] + "</span><span style='margin-right: 10px' class='label pull-right label-success'>Now</span>")
                         else
-                            $("#times").append("<div>" + instructions[j] + "</div>")
+                            $("#times").append("<div><span style='margin-right: 10px' class='label label-info'>" + 
+                                labels[j] + "</span><span>" + instructions[j] + "</span></div>")
                             }
                     i++
                 }
