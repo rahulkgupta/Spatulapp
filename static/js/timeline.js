@@ -7,7 +7,10 @@ $(document).ready(function() {
     var increment = totalWidth/100
     var t = 0
     for (var i = 0; i < times.length; i++) {
-        $("#times").append("<div>" + instructions[i] + "</div>")
+        if (i == 0)
+            $("#current").append("<span style='margin-right: 10px' class='label label-success'>Now</span><span>" + instructions[i] + "</span>")
+        else
+            $("#times").append("<div>" + instructions[i] + "</div>")
     }
     i = 0
     var interval = setInterval(function () {
@@ -19,11 +22,14 @@ $(document).ready(function() {
         }
         console.log(t)
         if (t == times[i]) {
-            console.log('worked')
             $("#times").html("") 
+            $("#current").html("")
             for (var j = i; j < times.length; j++) {
-                $("#times").append("<div>" + instructions[j] + "</div>")
-            }
+                if (i == j)
+                    $("#current").append("<span style='margin-right: 10px' class='label label-success'>Now</span><span>" + instructions[j] + "</span>")
+                else
+                    $("#times").append("<div>" + instructions[j] + "</div>")
+                    }
             i++
         }
         t+=1

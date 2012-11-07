@@ -1,5 +1,5 @@
 var times = [10, 20, 30]
-var instructions = ["Get food items", "Boil pasta", "Cut Bread"]
+var instructions = ["Get food items","Cut Bread", "Boil pasta"]
 
 $(document).ready(function() {
     $("#add").click(
@@ -10,7 +10,10 @@ $(document).ready(function() {
     var increment = totalWidth/100
     var t = 8
     for (var i = 0; i < times.length; i++) {
-        $("#times").append("<div>" + instructions[i] + "</div>")
+        if (i == 0)
+            $("#current").append("<span style='margin-right: 10px' class='label label-success'>Now</span><span>" + instructions[i] + "</span>")
+        else
+            $("#times").append("<div>" + instructions[i] + "</div>")
     }
     i = 1
     $("#resume").click(
@@ -29,9 +32,13 @@ $(document).ready(function() {
                 if (t == times[i-1]) {
                     console.log('worked')
                     $("#times").html("") 
+                    $("#current").html("")
                     for (var j = i; j < times.length; j++) {
-                        $("#times").append("<div>" + instructions[j] + "</div>")
-                    }
+                        if (i == j)
+                            $("#current").append("<span style='margin-right: 10px' class='label label-success'>Now</span><span>" + instructions[j] + "</span>")
+                        else
+                            $("#times").append("<div>" + instructions[j] + "</div>")
+                            }
                     i++
                 }
                 t+=1
