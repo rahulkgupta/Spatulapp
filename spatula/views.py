@@ -44,9 +44,13 @@ def sumtimeline(request):
     return render_to_response('sumtimeline.html', {},context_instance=RequestContext(request)
 )
 
+def timelineScroll(request):
+    return render_to_response('timelineScroll.html', {},context_instance=RequestContext(request)
+)
+
 def topbar(request):
     return render_to_response('topbar.html', {},context_instance=RequestContext(request)
-                              )
+)
 
 def search(request):
     search = request.GET['query']

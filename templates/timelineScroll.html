@@ -40,6 +40,31 @@
 			margin-left:15px;
 		}
 		
+		#scrollContainer {
+			height: 185px;
+			width: 520px;
+			overflow: scroll;
+
+		}
+		#scrollContent {
+			max-width: 550px;
+			min-height: 20px;
+			margin-right: 20px;
+			position: relative;
+		}
+		.shade {
+			background-color:rgba(0,0,0,0.5);
+			padding-left: 10px;
+		}
+		.step {
+			margin-bottom: 10px;
+		}
+		.now {
+			background-color:rgba(34,139,34,0.5);
+			padding-left: 10px;
+		}
+
+
 		.alpha-white {
 			/* Fallback for web browsers that doesn't support RGBa */
 			background: rgb(255, 255, 255);
@@ -189,8 +214,47 @@
 				            <div id="prog-parent" class="well progress progress-success progress-striped active">
                                 <div id="progress" class="bar" style="width: 0%;"></div>
                             </div>
-                            <div id="current" class="leadr well"></div>
-    				        <div id="times" class="leadr well"/>
+                            <!-- <div id="current" class="leadr well"></div> -->
+    				        <!-- <div id="times" class="leadr well"/> -->
+    				        <div id="scrollContainer">
+    				        	<div id="shade">
+    				        	</div>
+    				        	<div id="scrollContent" class="leadr well">
+    				        		<div class="step now">
+    				        			<span style="margin-right: 10px" class="label label-success">Now</span>    			
+    				        			<span style="margin-right: 10px" class="label label-info">Sauce</span>
+    				        			<span>In saucepan melt 2T butter. Stir in 1/4c flour, 1t salt and dash pepper.</span>
+
+    				        		</div>
+    				        		<div class="step">
+    				        			<span style="margin-right: 10px" class="label label-info">Sauce</span>
+    				        			<span>Add milk all at once. Cook and stir over medium heat until thickened and bubbly.</span>
+    				        		</div>
+    				        		<div class="step">
+    				        			<span style="margin-right: 10px" class="label label-info">Pasta</span>
+    				        			<span>Bring 6qt water to a boil</span>
+    				        		</div>
+    				        		<div class="step">
+    				        			<span style="margin-right: 10px" class="label label-info">Salmon</span>
+    				        			<span>Chop Onions</span>
+    				        		</div>
+    				        		<div class="step">
+    				        			<span style="margin-right: 10px" class="label label-info">Salmon</span>
+    				        			<span>Do this</span>
+    				        		</div>
+    				        		<div class="step">
+    				        			<span style="margin-right: 10px" class="label label-info">Salmon</span>
+    				        			<span>Do that</span>
+    				        		</div>
+    				        		<div class="step">
+    				        			<span style="margin-right: 10px" class="label label-info">Salmon</span>
+    				        			<span>Lorem Ipsum</span>
+    				        		</div>   
+    				        		<div class="step">
+    				        			<span>Done!</span>
+    				        		</div>     				        		 				        		
+    				        	</div>
+    				        </div>
 				        </div>
 							
 						<!-- </div> -->
@@ -240,6 +304,7 @@
     <script src="{{ STATIC_URL }}js/bootstrap-carousel.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap-typeahead.js"></script>
     <script src="{{ STATIC_URL }}js/timeline.js"></script>
+    <script src="{{ STATIC_URL }}js/timelineScroll.js"></script>
 
   </body>
 </html>
